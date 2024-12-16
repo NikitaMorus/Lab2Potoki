@@ -1,3 +1,3 @@
 #pragma once
 
-void TextScaner();
+void TextScaner(); // Запуск сканера текста

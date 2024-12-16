@@ -20,22 +20,22 @@ void TextScaner()
     {
         string line; // строка, в которую будут считываться значения из файла
         unsigned int flag_one = 0; // "" флаг на двойные кавычки
-        unsigned int flag_two = 0; // '' флаг на одинарные кавычки
+        unsigned int flag_two = 0; // '' флаг на одинарные кавычки 
 
         while (!file.eof()) // пока не конец файла
         {
-            getline(file, line); // считываем строку
+            getline(file, line); // считываем строку 
 
             for (int id = 0; id < line.size(); id++) // перебираем символы в строке
             {
                 if (flag_one) // если двойные кавычки встретились раньше
-                {
+                { 
                     if (line[id] == '"') // если символ закрывающие двойные кавычки
                     {
-                        flag_one = 0; // меняем флаг
+                        flag_one = 0; // меняем флаг 
                         cout << "\n";
                         continue; // переходим на следующую итерацию
-                    }
+                    } 
 
                     cout << line[id]; // выводим символы
                 }
@@ -43,12 +43,11 @@ void TextScaner()
                 else if (flag_two) // если одинарные кавычки (аналогично с двойными)
                 {
                     if (line[id] == '\'')
-                    {
-                        flag_two = 0;
+                    { 
                         cout << "\n";
                         continue;
                     }
-
+                     
                     cout << line[id];
                 }
 
@@ -57,6 +56,7 @@ void TextScaner()
             }
         }
     }
-
+     
     file.close(); // закрываем файл
 }
+ 
